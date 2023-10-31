@@ -13,7 +13,11 @@
     "resolveJsonModule": true, // 启用从json文件中导入模块
     "isolatedModules": true, // 启用TypeScript编译器的隔离模块模式
     "noEmit": true, // 不生成输出文件
-    "jsx": "react-jsx" // react18这里也可以改成react-jsx
+    "jsx": "react-jsx", // react18这里也可以改成react-jsx
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["./src"] // 设置需要编译的文件路径
 }

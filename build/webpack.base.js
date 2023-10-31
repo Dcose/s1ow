@@ -55,14 +55,18 @@ module.exports = {
 
   // 配置解析模块
   resolve: {
-    extensions: ['.js', '.tsx', '.ts']
+    extensions: ['.js', '.tsx', '.ts'],
+    alias: {
+      '@': path.join(__dirname, '../src')
+    }
   },
 
   // 配置插件
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'), // 模板取定义root节点的模板
-      inject: true // 自动注入静态资源
+      inject: true, // 自动注入静态资源
+      favicon: './public/favicon.ico'
     }),
 
     // 配置环境变量
