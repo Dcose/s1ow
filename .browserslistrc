@@ -1,2 +1,4 @@
-IE 9 # 兼容IE 9
-chrome 35 # 兼容chrome 35
+last 10 Chrome versions
+last 5 Firefox versions
+Safari >= 6
+ie > 8

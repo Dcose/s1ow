@@ -1,5 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import 'normalize.css' // css重置
+import './assets/css/index.scss'
 import App from './App'
 
 const root = document.getElementById('root')
