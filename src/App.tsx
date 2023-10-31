@@ -1,10 +1,13 @@
 import React from 'react'
+import HomePage from './views/HomePage'
+import Button from './component/button/Button'
 // import '@/app.scss'
 
 function App() {
   return (
     <div>
-      <h2>index</h2>
+      <HomePage />
+      <Button />
     </div>
   )
 }
