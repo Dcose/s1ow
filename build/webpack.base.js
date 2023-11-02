@@ -36,7 +36,6 @@ module.exports = {
           }
         }
       },
-
       {
         test: /\.(css|s[ac]ss)$/i, // 匹配css和scss文件
         use: [
@@ -54,6 +53,18 @@ module.exports = {
           // 将 Sass 编译成 CSS
           'sass-loader'
         ]
+      },
+      {
+        test: /.(png|jpg|jpeg|gif|svg|webp)$/, // 匹配图片文件
+        type: 'asset', // type选择asset
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024 // 小于10kb转base64位
+          }
+        },
+        generator: {
+          filename: 'static/images/[name][ext]' // 文件输出目录和命名
+        }
       }
     ]
   },

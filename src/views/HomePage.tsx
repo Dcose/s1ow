@@ -33,7 +33,6 @@ function HomePage() {
         <h2>s1ow</h2>
         <p>What kind of world do you want to shape ?</p>
 
-        {/* TODO Dealing import picture for webpack*/}
         <img src={abhm} />
         <img src={xsk} />
         <img src={gqj} />
