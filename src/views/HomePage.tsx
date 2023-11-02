@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Header.module.scss'
 import abhm from '@/assets/images/abhm.webp'
-import gqj from '@/assets/images/gqj.webp'
+
+import ssa from '@/assets/images/ssa.png'
 import xsk from '@/assets/images/xsk.webp'
 
 function HomePage() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const images = [ssa, ssa, ssa, ssa, ssa, ssa, ssa, ssa, ssa, ssa, ssa]
+
+  useEffect(() => {
+    const nextSlide = () => {
+      setCurrentIndex((prevIndex) => prevIndex - 1)
+    }
+
+    const interval = setInterval(nextSlide, 10) // 调整轮播速度
+
+    return () => {
+      clearInterval(interval)
+    }
+  })
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <header className={styles.header}>
@@ -32,10 +47,19 @@ function HomePage() {
       <main className={styles.main}>
         <h2>s1ow</h2>
         <p>What kind of world do you want to shape ?</p>
-
-        <img src={abhm} />
-        <img src={xsk} />
-        <img src={gqj} />
+        <div style={{ display: 'flex', overflow: 'hidden' }}>
+          {images.map((src) => (
+            <img
+              src={src}
+              style={{
+                width: '273px',
+                height: '340px',
+                borderRadius: '26px',
+                transform: `translateX(${currentIndex}%)`
+              }}
+            />
+          ))}
+        </div>
       </main>
       <footer className={styles.footer}>Footer</footer>
     </div>
