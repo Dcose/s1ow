@@ -1,20 +1,21 @@
 import React, { ReactElement, useEffect } from 'react'
 
-import './style.scss'
+export interface ItemProps {
+  num: number
+}
 
-import { ItemProps } from '@/views/HomePage'
-
-interface Props {
+interface MarqueeProps {
   Item: (item: ItemProps) => ReactElement
   showNum: number
   speed: number
   containerWidth: number
-  data: Array<any>
+  data: Array<string>
   hoverStop?: boolean
   direction?: 'left' | 'right'
 }
-const fillArray = (arr: any[], length: number): any[] => {
-  const result: any[] = []
+
+const fillArray = (arr: string[], length: number): string[] => {
+  const result: string[] = []
   while (result.length < length) {
     result.push(...arr)
   }
@@ -29,10 +30,11 @@ function Marquee({
   data,
   hoverStop = false,
   direction = 'left'
-}: Props) {
+}: MarqueeProps) {
   const showData = fillArray(data, showNum)
   const length = showData.length
   const itemWidth = containerWidth / showNum
+
   useEffect(() => {
     // 创建一个新的样式表对象
     const style = document.createElement('style')
@@ -68,9 +70,9 @@ function Marquee({
   }, [])
 
   return (
-    <div style={{ width: `${containerWidth}px` }} className="wrap">
+    <div style={{ width: `${containerWidth}px` }} className="overflow-hidden">
       <div
-        className="list"
+        className="relative flex top-0 left-0 h-full"
         style={{
           width: `${itemWidth * length}px`,
           animation: `templates-partner-moving ${

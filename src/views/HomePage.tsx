@@ -1,14 +1,13 @@
-import Marquee from '@/component/marquee/Marquee'
-import Navbar from '@/component/navbar/Navbar'
 import React from 'react'
 
-const data = new Array(5).fill(0).map((item, index) => {
+import Marquee, { ItemProps } from '@/component/marquee/Marquee'
+import Navbar from '@/component/navbar/Navbar'
+
+const data = new Array(5).fill(0).map((_, index) => {
   return { num: index }
 })
-console.log('data', data)
-export interface ItemProps {
-  num: number
-}
+console.log('%c Line:10 🥪 data', 'color:#42b983', data)
+
 const itemStyle = {
   border: '1px solid #ccc',
   background: '#fff',
