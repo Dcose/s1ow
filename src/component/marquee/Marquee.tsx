@@ -28,7 +28,7 @@ function Marquee({
   speed,
   containerWidth,
   data,
-  hoverStop = false,
+  hoverStop = true,
   direction = 'left'
 }: MarqueeProps) {
   const showData = fillArray(data, showNum)
