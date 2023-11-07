@@ -1,9 +1,3 @@
-const fillArray = <T>(arr: T[], length: number): T[] => {
-  const result: T[] = []
-  while (result.length < length) {
-    result.push(...arr)
-  }
-  return result.concat(result)
+export const fillArray = <T>(arr: T[], length: number): T[] => {
+  return Array.from({ length }, () => arr).flat()
 }
-
-export default fillArray
