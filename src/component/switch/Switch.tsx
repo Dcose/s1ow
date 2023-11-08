@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 interface SwitchProps {
   initialState?: boolean
   onClick?: () => void
+}
+
+const spring = {
+  type: 'spring',
+  stiffness: 700,
+  damping: 30
 }
 
 const Switch: React.FC<SwitchProps> = ({ initialState = true, onClick }) => {
@@ -14,19 +21,20 @@ const Switch: React.FC<SwitchProps> = ({ initialState = true, onClick }) => {
   }
 
   return (
-    <label className="w-12 h-7 flex items-center justify-center">
+    <>
       <div
-        className={`w-full h-full border-solid border border-black dark:border-white rounded-full`}
+        className={`w-12 h-7 flex items-center justify-${
+          isOff ? 'start' : 'end'
+        } border border-cyan-300 rounded-full p-1`}
+        onClick={toggleSwitch}
       >
-        <div
-          className={`w-5 h-5 bg-black dark:bg-white rounded-full m-1  inset-0 transition-transform ${
-            isOff ? 'transform translate-x-full' : ''
-          }`}
-        >
-          <input type="checkbox" className="hidden" onChange={toggleSwitch} />
-        </div>
+        <motion.div
+          className="w-5 h-5 bg-black dark:bg-white rounded-full"
+          layout
+          transition={spring}
+        />
       </div>
-    </label>
+    </>
   )
 }
 
