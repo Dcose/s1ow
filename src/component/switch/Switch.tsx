@@ -23,13 +23,14 @@ const Switch: React.FC<SwitchProps> = ({ initialState = true, onClick }) => {
   return (
     <>
       <div
-        className={`w-12 h-7 flex items-center justify-${
-          isOff ? 'start' : 'end'
-        } border border-cyan-300 rounded-full p-1`}
+        className={`
+        w-12 h-7 flex items-center
+        justify-${isOff ? 'start' : 'end'}
+        border bg-black rounded-full p-1`}
         onClick={toggleSwitch}
       >
         <motion.div
-          className="w-5 h-5 bg-black dark:bg-white rounded-full"
+          className="w-5 h-5 bg-white dark:bg-white rounded-full"
           layout
           transition={spring}
         />
