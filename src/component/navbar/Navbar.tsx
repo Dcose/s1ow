@@ -1,15 +1,22 @@
 import React from 'react'
 import logo from '../../../public/logo2.png'
 
+import useThemeStore, { ThemeState } from '@/redux/store'
+import Switch from '../switch/Switch'
+
 const Navbar: React.FC = () => {
+  const { toggleDarkMode } = useThemeStore<ThemeState>((state) => state)
+
   return (
     <nav className="border-b-2">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 dark:bg-black">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <span className="flex items-center justify-center">
               <img src={logo} alt="" className="w-11" />
-              <span className="text-2xl m-3 font-bold">s1ow</span>
+              <span className="text-2xl m-3 font-bold dark:text-white">
+                s1ow
+              </span>
             </span>
           </div>
           <div className="flex">
@@ -101,6 +108,7 @@ const Navbar: React.FC = () => {
             >
               Contact
             </a>
+            <Switch onClick={toggleDarkMode} />
           </div>
         </div>
       </div>
