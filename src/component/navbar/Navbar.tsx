@@ -3,9 +3,9 @@ import React from 'react'
 import NavLink from './NavLink'
 
 const navLinks = [
-  { href: '/', text: 'Home' },
-  { href: '/about', text: 'About', color: 'pink' },
-  { href: '/contact', text: 'Contact', color: 'sky' }
+  { href: '/', text: 'HOME' },
+  { href: '/about', text: 'ABOUT', color: 'pink' },
+  { href: '/contact', text: 'CONTACT', color: 'sky' }
 ]
 
 const Navbar: React.FC = () => {

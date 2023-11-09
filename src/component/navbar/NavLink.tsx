@@ -45,6 +45,7 @@ const NavLink: React.FC<NavLinkProps> = ({
       href={href}
       className={`
       text-xs
+      font-bold
       relative
       py-2
       text-white
