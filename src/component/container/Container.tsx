@@ -1,14 +1,22 @@
-import React from 'react'
+import { motion } from 'framer-motion'
+import React, { useState } from 'react'
 
 const Container: React.FC = () => {
+  const [y, setY] = useState(0)
+
   return (
-    <div className="flex items-center flex-col bg-black h-screen">
-      <h1 className="text-4xl font-bold m-10 text-white">
-        Shape your Imagination
+    <div className=" absolute bg-black h-screen w-full">
+      <h1 className="relative text-white text-9xl top-10 left-6">
+        <strong>Ciao.</strong>
+
+        <div>
+          <motion.div
+            className="box"
+            animate={{ y }}
+            transition={{ type: 'spring' }}
+          />
+        </div>
       </h1>
-      <span className="text-2xl font-semibold text-white">
-        What kind of world do you want to shape ?
-      </span>
     </div>
   )
 }

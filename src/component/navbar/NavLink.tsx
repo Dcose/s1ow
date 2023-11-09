@@ -12,7 +12,7 @@ const colorVariants: {
   slate: 'after:bg-slate-500',
   gray: 'after:bg-gray-500',
   zinc: 'after:bg-zinc-500',
-  neutral: 'after:bg-neutral-300',
+  neutral: 'after:bg-neutral-50',
   stone: 'after:bg-stone-500',
   red: 'after:bg-red-500',
   orange: 'after:bg-orange-500',
@@ -53,15 +53,19 @@ const NavLink: React.FC<NavLinkProps> = ({
       after:-bottom-1
       after:left-1/2
       after:w-0
-      after:h-1
+      after:h-px
       after:origin-left
       after:transform
       after:-translate-x-1/2
       ${colorVariants[color]}
       after:transition-all
-      after:ease-in-out
+      hover:after:ease-in-out
       after:duration-300
-      hover:after:w-full`}
+      hover:after:w-full
+      hover:text-neutral-700
+      hover:ease-in-out
+      hover:duration-300
+      `}
     >
       {children}
     </a>
