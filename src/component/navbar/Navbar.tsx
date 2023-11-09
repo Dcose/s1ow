@@ -1,8 +1,5 @@
 import React from 'react'
-import logo from '../../../public/logo2.png'
 
-import useThemeStore, { ThemeState } from '@/redux/store'
-import Switch from '../switch/Switch'
 import NavLink from './NavLink'
 
 const navLinks = [
@@ -12,18 +9,14 @@ const navLinks = [
 ]
 
 const Navbar: React.FC = () => {
-  const { toggleDarkMode } = useThemeStore<ThemeState>((state) => state)
   return (
     <nav className="bg-black">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
         <div className="relative flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <span className="flex items-center justify-center">
-              <span className="text-2xl m-3 font-bold dark:text-white">
-                s1ow
-              </span>
-            </span>
-          </div>
+          <span className="flex items-center justify-center">
+            <span className=" text-xs m-3 font-bold text-white">s1ow</span>
+            <span className=" text-xs m-3 font-bold text-white">s1ow</span>
+          </span>
           {/* <a
               href="#"
               className="
@@ -48,8 +41,6 @@ const Navbar: React.FC = () => {
             >
               Home
             </a> */}
-
-          {/* <Switch onClick={toggleDarkMode} /> */}
 
           <ul className="flex">
             {navLinks.map((link) => (
