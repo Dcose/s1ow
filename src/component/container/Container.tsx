@@ -3,13 +3,13 @@ import Progress from '../progress/Progress'
 
 const Container: React.FC = () => {
   return (
-    <div className=" absolute bg-black w-full">
-      <h1 className="relative text-white text-9xl">
+    <div className="absolute bg-black w-full">
+      <Progress />
+      <h1 className="relative text-white" style={{ fontSize: '9.5rem' }}>
         <strong>Ciao.</strong>
       </h1>
 
       <>
-        <Progress />
         <h1>
           <code>useScroll</code> with spring smoothing
         </h1>

@@ -13,8 +13,6 @@ const NavLink: React.FC<NavLinkProps> = ({
   color = 'neutral',
   children
 }) => {
-  console.log(color)
-
   return (
     <a
       href={href}

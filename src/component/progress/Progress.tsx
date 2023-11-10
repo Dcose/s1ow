@@ -8,7 +8,6 @@ interface ProgressProps {
 }
 
 const Progress: React.FC<ProgressProps> = ({ color = 'neutral' }) => {
-  console.log('%c Line:12 🥟 color', 'color:#42b983', color)
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
