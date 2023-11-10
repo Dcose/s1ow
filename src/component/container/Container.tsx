@@ -1,299 +1,56 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Progress from '../progress/Progress'
 
+import bg1 from '@/assets/images/002.jpg'
+import { motion, useInView } from 'framer-motion'
+
 const Container: React.FC = () => {
+  const ref = useRef(null)
+  const isInView = useInView(ref)
+
   return (
     <div className="absolute bg-black w-full">
       <Progress />
-      <h1 className="relative text-white" style={{ fontSize: '9.5rem' }}>
-        <strong>Ciao.</strong>
-      </h1>
+      <div className="relative top-40 bg-black">
+        <motion.div
+          className="flex flex-col items-start"
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-white" style={{ fontSize: '9.5rem' }}>
+            <strong>Ciao.</strong>
+          </h1>
+          <img
+            src={bg1}
+            alt="02"
+            className="h-auto sm:w-4/5 lg:w-4/5 xl:w-4/5"
+          />
+        </motion.div>
 
-      <>
-        <h1>
-          <code>useScroll</code> with spring smoothing
-        </h1>
-        <article className="text-white">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
-            rhoncus quam.
-          </p>
-          <p>
-            Fringilla quam urna. Cras turpis elit, euismod eget ligula quis,
-            imperdiet sagittis justo. In viverra fermentum ex ac vestibulum.
-            Aliquam eleifend nunc a luctus porta. Mauris laoreet augue ut felis
-            blandit, at iaculis odio ultrices. Nulla facilisi. Vestibulum cursus
-            ipsum tellus, eu tincidunt neque tincidunt a.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            In eget sodales arcu, consectetur efficitur metus. Duis efficitur
-            tincidunt odio, sit amet laoreet massa fringilla eu.
-          </p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-        </article>
-        <article className="text-white">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
-            rhoncus quam.
-          </p>
-          <p>
-            Fringilla quam urna. Cras turpis elit, euismod eget ligula quis,
-            imperdiet sagittis justo. In viverra fermentum ex ac vestibulum.
-            Aliquam eleifend nunc a luctus porta. Mauris laoreet augue ut felis
-            blandit, at iaculis odio ultrices. Nulla facilisi. Vestibulum cursus
-            ipsum tellus, eu tincidunt neque tincidunt a.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            In eget sodales arcu, consectetur efficitur metus. Duis efficitur
-            tincidunt odio, sit amet laoreet massa fringilla eu.
-          </p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-        </article>
-        <article className="text-white">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
-            rhoncus quam.
-          </p>
-          <p>
-            Fringilla quam urna. Cras turpis elit, euismod eget ligula quis,
-            imperdiet sagittis justo. In viverra fermentum ex ac vestibulum.
-            Aliquam eleifend nunc a luctus porta. Mauris laoreet augue ut felis
-            blandit, at iaculis odio ultrices. Nulla facilisi. Vestibulum cursus
-            ipsum tellus, eu tincidunt neque tincidunt a.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            In eget sodales arcu, consectetur efficitur metus. Duis efficitur
-            tincidunt odio, sit amet laoreet massa fringilla eu.
-          </p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-        </article>
-        <article className="text-white">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
-            rhoncus quam.
-          </p>
-          <p>
-            Fringilla quam urna. Cras turpis elit, euismod eget ligula quis,
-            imperdiet sagittis justo. In viverra fermentum ex ac vestibulum.
-            Aliquam eleifend nunc a luctus porta. Mauris laoreet augue ut felis
-            blandit, at iaculis odio ultrices. Nulla facilisi. Vestibulum cursus
-            ipsum tellus, eu tincidunt neque tincidunt a.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            In eget sodales arcu, consectetur efficitur metus. Duis efficitur
-            tincidunt odio, sit amet laoreet massa fringilla eu.
-          </p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-          <p>
-            Pellentesque id lacus pulvinar elit pulvinar pretium ac non urna.
-            Mauris id mauris vel arcu commodo venenatis. Aliquam eu risus arcu.
-            Proin sit amet lacus mollis, semper massa ut, rutrum mi.
-          </p>
-          <p>Sed sem nisi, luctus consequat ligula in, congue sodales nisl.</p>
-          <p>
-            Vestibulum bibendum at erat sit amet pulvinar. Pellentesque pharetra
-            leo vitae tristique rutrum. Donec ut volutpat ante, ut suscipit leo.
-          </p>
-          <h2>Sub-header</h2>
-          <p>
-            Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum fringilla
-            aliquet. Pellentesque auctor vehicula malesuada. Aliquam id feugiat
-            sem, sit amet tempor nulla. Quisque fermentum felis faucibus,
-            vehicula metus ac, interdum nibh. Curabitur vitae convallis ligula.
-            Integer ac enim vel felis pharetra laoreet. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Pellentesque hendrerit ac
-            augue quis pretium.
-          </p>
-          <p>
-            Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-            tristique, elit metus efficitur elit, ac pretium sapien nisl nec
-            ante. In et ex ultricies, mollis mi in, euismod dolor.
-          </p>
-          <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-        </article>
-      </>
+        <motion.div
+          ref={ref}
+          className="flex flex-col justify-center items-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : ''}
+          transition={{ duration: 1 }}
+        >
+          <div className="text-white text-2xl">
+            <p>
+              Welcome Nice to meet you! I am a freelance designer and art
+              director currently living in Berlin. I have solid experience from
+              a background in UX and UI in start ups and scale ups in Europe. I
+              have a broad skillset – ranging from digital design to graphic
+              design and 3d renderings and much, much more.
+            </p>
+            <p>
+              Who I Am I'm a designer, maker, nomad, and coffee lover obsessed
+              with the world of digital
+            </p>
+          </div>
+        </motion.div>
+      </div>
     </div>
   )
 }
