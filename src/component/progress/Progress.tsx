@@ -18,7 +18,7 @@ const Progress: React.FC<ProgressProps> = ({ color = 'neutral' }) => {
   return (
     <motion.div
       className={`fixed top-0 left-0 right-0 h-1 ${colors[color]}
-      transform origin-left`}
+      transform origin-left z-10`}
       style={{ scaleX }}
     />
   )
