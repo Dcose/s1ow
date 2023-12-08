@@ -1,17 +1,23 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 import Progress from '../progress/Progress'
 
 import bg1 from '@/assets/images/002.jpg'
+import { acgImgAPI } from '@/api/acgImgAPI'
 
 const Container: React.FC = () => {
+  const [img, setImg] = useState<string>(bg1)
   const ref = useRef(null)
+
+  useEffect(() => {
+    acgImgAPI().then((res) => setImg(res.imgurl))
+  }, [])
 
   return (
     <div className="absolute bg-black w-full h-full">
       <Progress />
-      <div className="relative top-40 bg-black">
+      <div className="relative top-40 bg-black pb-7">
         <motion.div
           className="flex flex-col items-start"
           ref={ref}
@@ -23,7 +29,7 @@ const Container: React.FC = () => {
             <strong>Ciao.</strong>
           </h1>
           <img
-            src={bg1}
+            src={img}
             alt="02"
             className="h-auto sm:w-4/5 lg:w-3/5 xl:w-3/5"
           />
